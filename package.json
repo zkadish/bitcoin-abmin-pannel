@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "rimraf dist/**",
+    "dist": "cp dist/*.js ../express-chart/public/javascripts/; cp dist/*.css ../express-chart/public/stylesheets/; cp dist/*.ico ../express-chart/public/",
+    "prebuild": "rm -rf dist",
     "build": "NODE_ENV=production webpack -d",
     "postbuild": "cp src/assets/favicon.ico dist/",
-    "start": "NODE_ENV=development; webpack-dev-server -d --progress --colors --hot --config ./webpack.config.js"
+    "start": "export NODE_ENV=development; webpack-dev-server -d --progress --colors --hot --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
@@ -40,6 +42,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",

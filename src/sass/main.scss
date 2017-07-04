@@ -3,18 +3,86 @@
   box-sizing: border-box;
 }
 
-.app-container {
-  margin: 50px auto;
-  width: 300px;
-  height: 300px;
-  border: 1px solid $BORDER_COLOR;
-  text-align: center;
+.mw-container {
+  // max-width: 1980px;
+  padding: 0 20px;
+  // border: 1px solid $BORDER_COLOR;
+  border: 1px dashed red;
 
-  button {
-    margin: 10px;
+  .mw-header {
+    padding: 10px 20px;
+    // border-bottom: 1px solid $BORDER_COLOR;
+    border: 1px dashed red;
+    border-width: 0 1px 1px;
+    h2 {
+      margin: 0;
+    }
   }
 
-  .number {
-    font-size: 8rem;
+  .mw-main {
+    .chart-watchlist-container {
+      display: flex;
+      .stock-chart-container {
+        flex: 1;
+        .stock-chart-settings {
+          position: relative;
+          justify-content: center;
+          // align-items: center;
+          display: flex;
+          height: 40px;
+          border: 1px dashed red;
+          border-width: 0 0 1px 1px;
+        }
+        .stock-chart {
+          position: relative;
+          height: 200px;
+          border: 1px dashed red;
+          border-width: 0 0 1px 1px;
+        }
+      }
+      .watch-list {
+        padding: 0 20px;
+        width: 200px;
+        border: 1px dashed red;
+        border-width: 0 1px 1px;
+      }
+    }
+    .estimated-profit {
+      padding: 0 20px;
+      height: 300px;
+      width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+    }
+    .total-nodes {
+      padding: 0 20px;
+      height: 300px;
+      width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+    }
+    .total-hashrate {
+      padding: 0 20px;
+      height: 300px;
+      width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+    }
+    .weather-info {
+      padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      min-width: 300px;
+      border: 1px dashed red;
+      border-width: 0 1px 1px;
+    }
+  }
+  .mw-footer {
+    text-align: center;
+    border: 1px dashed red;
+    border-width: 0 1px;
+    .powered-by-link {
+      font-size: .8em;
+    }
   }
 }
