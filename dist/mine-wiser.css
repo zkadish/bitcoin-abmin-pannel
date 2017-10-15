@@ -711,42 +711,42 @@ textarea {
   bottom: 0;
   left: 0;
   user-select: none; }
-  .canvas-container .table-container {
+  .canvas-container .resize-container {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     user-select: none; }
-    .canvas-container .table-container .chart-container {
+    .canvas-container .resize-container .stockchart-container {
       position: absolute;
       top: 0;
       right: 85px;
       bottom: 30px;
       left: 0; }
-    .canvas-container .table-container .chart-canvas {
+    .canvas-container .resize-container .chart-canvas {
       position: absolute;
       top: 0;
       left: 0;
       user-select: none; }
-    .canvas-container .table-container .yaxis-container {
+    .canvas-container .resize-container .yaxis-container {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 30px;
       width: 85px; }
-    .canvas-container .table-container .yaxis-canvas {
+    .canvas-container .resize-container .yaxis-canvas {
       position: absolute;
       top: 0;
       left: 0;
       user-select: none; }
-    .canvas-container .table-container .xaxis-container {
+    .canvas-container .resize-container .xaxis-container {
       position: absolute;
       left: 0;
       bottom: 0;
       right: 85px;
       height: 30px; }
-    .canvas-container .table-container .xaxis-canvas {
+    .canvas-container .resize-container .xaxis-canvas {
       position: absolute;
       top: 0;
       right: 0;
@@ -755,46 +755,55 @@ textarea {
   box-sizing: border-box; }
 
 .mw-container {
-  padding: 0 40px;
+  padding: 0 20px;
   border: 1px dashed red; }
   .mw-container .mw-header {
-    padding: 10px 0;
+    padding: 10px 20px;
     border: 1px dashed red;
     border-width: 0 1px 1px; }
     .mw-container .mw-header h2 {
       margin: 0; }
-  .mw-container .mw-main .stock-chart-settings {
-    height: 40px;
-    border: 1px dashed red;
-    border-width: 0 1px 1px; }
-  .mw-container .mw-main .stock-chart-container {
+  .mw-container .mw-main .chart-watchlist-container {
     display: flex; }
-    .mw-container .mw-main .stock-chart-container .stock-chart {
-      flex: 1;
-      position: relative;
-      height: 200px;
-      border: 1px dashed red;
-      border-width: 0 0 1px 1px; }
-    .mw-container .mw-main .stock-chart-container .watch-list {
+    .mw-container .mw-main .chart-watchlist-container .stock-chart-container {
+      flex: 1; }
+      .mw-container .mw-main .chart-watchlist-container .stock-chart-container .stock-chart-settings {
+        position: relative;
+        justify-content: center;
+        display: flex;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px 1px; }
+      .mw-container .mw-main .chart-watchlist-container .stock-chart-container .stock-chart {
+        position: relative;
+        height: 200px;
+        border: 1px dashed red;
+        border-width: 0 0 1px 1px; }
+    .mw-container .mw-main .chart-watchlist-container .watch-list {
+      padding: 0 20px;
       width: 200px;
       border: 1px dashed red;
       border-width: 0 1px 1px; }
   .mw-container .mw-main .estimated-profit {
+    padding: 0 20px;
     height: 300px;
     width: 300px;
     border: 1px dashed red;
     border-width: 0 0 1px 1px; }
   .mw-container .mw-main .total-nodes {
+    padding: 0 20px;
     height: 300px;
     width: 300px;
     border: 1px dashed red;
     border-width: 0 0 1px 1px; }
   .mw-container .mw-main .total-hashrate {
+    padding: 0 20px;
     height: 300px;
     width: 300px;
     border: 1px dashed red;
     border-width: 0 0 1px 1px; }
   .mw-container .mw-main .weather-info {
+    padding: 0 20px;
     flex: 1;
     height: 300px;
     min-width: 300px;
@@ -804,5 +813,13 @@ textarea {
     text-align: center;
     border: 1px dashed red;
     border-width: 0 1px; }
-    .mw-container .mw-footer .coindesk-link {
+    .mw-container .mw-footer .powered-by-link {
       font-size: .8em; }
+
+.chart-settings {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  align-items: center;
+  border: 1px dashed red;
+  border-width: 0 1px; }

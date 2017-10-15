@@ -22,7 +22,7 @@ class StockChart extends React.Component {
     if (Object.getOwnPropertyNames(this.props.options).length === 0) return;
     if (JSON.stringify(nextProps.options) !== JSON.stringify(this.props.options)) {
       this.chart.loop.stop();
-      console.log(nextProps.options);
+      // console.log(nextProps.options);
       this.chart.update(nextProps.options);
     }
   }
