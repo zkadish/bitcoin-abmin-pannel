@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "cp dist/*.js ../express-chart/public/javascripts/; cp dist/*.css ../express-chart/public/stylesheets/; cp dist/*.ico ../express-chart/public/",
+    "deploy": "cp dist/*.js ../express-chart/public/javascripts/; cp dist/*.css ../express-chart/public/stylesheets/; cp dist/*.ico ../express-chart/public/",
     "prebuild": "rm -rf dist",
     "build": "NODE_ENV=production webpack -d",
     "postbuild": "cp src/assets/favicon.ico dist/",
