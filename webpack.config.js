@@ -5,7 +5,7 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 const GLOBALS = {
-  __DEV__: JSON.stringify(process.env.NODE_ENV === 'development'), 
+  __DEV__: JSON.stringify(process.env.NODE_ENV === 'development'),
 };
 
 console.log(GLOBALS.__DEV__);

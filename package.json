@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "cp dist/*.js ../express-chart/public/javascripts/; cp dist/*.css ../express-chart/public/stylesheets/; cp dist/*.ico ../express-chart/public/",
     "prebuild": "rm -rf dist",
-    "build": "NODE_ENV=production webpack -d",
+    "build": "export NODE_ENV=production; webpack -d",
     "postbuild": "cp src/assets/favicon.ico dist/",
     "start": "export NODE_ENV=development; webpack-dev-server -d --progress --colors --hot --config ./webpack.config.js"
   },
