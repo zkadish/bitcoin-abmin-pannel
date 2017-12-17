@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import Chart from './Chart';
 import ChartSettings from './ChartSettings';
 
+import FontAweIcon from './FontAweIcon';
+
 function App() {
   return (
     <div className="mw-container">
@@ -11,7 +13,13 @@ function App() {
         <h2>MineWiser Dashboard</h2>
       </header>
       <main className="mw-main">
-        <div className="chart-watchlist-container">
+        <div className="chart-container">
+          <div className="chat-list">
+            <header className="chat-header">
+              <FontAweIcon iconName="faCommentAlt" />
+              Chat
+            </header>
+          </div>
           <div className="stock-chart-container">
             <div className="stock-chart-settings">
               <div style={{ position: 'absolute', left: '20px' }}>

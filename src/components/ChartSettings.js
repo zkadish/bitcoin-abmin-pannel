@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Chart from 'js/stock-chart';
 import * as action from 'redux/actions/chart';
 
 class ChartSettings extends React.Component {

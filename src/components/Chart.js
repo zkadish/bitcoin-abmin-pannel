@@ -15,6 +15,10 @@ class StockChart extends React.Component {
   componentDidMount() {
     this.chart = new Chart();
     this.chart.init();
+    this.chart.coins().then((coins) => {
+      const coinList = coins.map(c => c.Symbol);
+      this.props.setCoinsList(coinList);
+    });
     this.props.setChartOptons(this.chart.options);
   }
 
@@ -22,7 +26,6 @@ class StockChart extends React.Component {
     if (Object.getOwnPropertyNames(this.props.options).length === 0) return;
     if (JSON.stringify(nextProps.options) !== JSON.stringify(this.props.options)) {
       this.chart.onStop();
-      // console.log(nextProps.options);
       this.chart.update(nextProps.options);
     }
   }
@@ -53,13 +56,15 @@ StockChart.propTypes = {
     PropTypes.array,
   ]),
   setChartOptons: PropTypes.func,
+  setCoinsList: PropTypes.func,
 };
 
 export default connect(
-  (state) => ({
+  state => ({
     options: state.chartSettings.options,
   }),
-  (dispatch) => ({
+  dispatch => ({
     setChartOptons: (options) => { dispatch(action.setChartOptions(options)); },
+    setCoinsList: (list) => { dispatch(action.setCoinList(list)); },
   }),
 )(StockChart);

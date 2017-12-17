@@ -28,8 +28,12 @@ function ChartSettings(state = settings, action) {
         options: action.options,
         coin: action.options.coin,
         currency: action.options.currency,
-        coins: action.options.list.coins,
         currencies: action.options.list.currencies,
+      };
+    case 'SET_COIN_LIST':
+      return {
+        ...state,
+        coins: action.list,
       };
     default:
       return state;
