@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import short from 'short-uuid';
 
 import * as action from 'redux/actions/chart';
 
 class ChartSettings extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    console.log('ChartSettings did mount!');
   }
 
   setCoin = (e) => {
@@ -28,9 +33,17 @@ class ChartSettings extends React.Component {
             onChange={(e) => { this.setCoin(e); }}
             className="coin-type"
             id="coin"
+            value={this.props.coin}            
           >
             {this.props.coins.map((c) => {
-              return <option key={c} value={c}>{c}</option>;
+              return (
+                <option
+                  key={short.uuid()}
+                  value={c}
+                >
+                  {c}
+                </option>
+              )
             })}
           </select>
           {/* <label htmlFor="currency">currency:</label> */}

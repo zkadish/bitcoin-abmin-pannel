@@ -16,6 +16,7 @@ class StockChart extends React.Component {
     this.chart = new Chart();
     this.chart.init();
     this.chart.coins().then((coins) => {
+      console.log('coin list:', coins);
       const coinList = coins.map(c => c.Symbol);
       this.props.setCoinsList(coinList);
     });
