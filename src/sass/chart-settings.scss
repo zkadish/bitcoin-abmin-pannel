@@ -1,8 +1,17 @@
-.chart-settings {
+.settings {
   display: flex;
-  justify-content: center;
-  padding: 0 20px;
+  // justify-content: center;
   align-items: center;
+  padding: 0 10px;
   border: 1px dashed red;
   border-width: 0 1px;
+  .size {
+    font-size: 1.7em;
+  }
+  .fa-cog {
+    margin-right: 10px;
+  }
+  &__coin-type {
+    padding: 0 0 0 10px;
+  }
 }

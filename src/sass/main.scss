@@ -3,100 +3,205 @@
   box-sizing: border-box;
 }
 
-.mw-container {
-  // max-width: 1980px;
-  padding: 0 20px;
-  // border: 1px solid $BORDER_COLOR;
+.ez-miner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border: 1px dashed red;
+  border-width: 1px 1px 0;  
 
-  .mw-header {
+  &__header {
+    display: flex;
     padding: 10px 20px;
-    // border-bottom: 1px solid $BORDER_COLOR;
     border: 1px dashed red;
-    border-width: 0 1px 1px;
-    h2 {
+    border-width: 0 0 1px;
+    &--size {
       margin: 0;
     }
   }
 
-  .mw-main {
-    .chart-container {
+  &__main {
+    display: flex;
+  }
+
+  &__analytics {
+    flex: 1;
+  }
+
+  .ez-chat {
+    width: 200px;
+    border: 1px dashed red;
+    border-width: 0 0 1px;
+    &__header {
       display: flex;
-      .chat-list {
-        width: 200px;
-        border: 1px dashed red;
-        border-width: 0 1px 1px;
-        .chat-header {
-          display: flex;
-          align-items: center;
-          padding: 0 20px;
-          height: 40px;
-          border: 1px dashed red;
-          border-width: 0 0 1px;        
-          .fa-comment-alt {
-            margin-right: 5px;
-          }
-        }
+      align-items: center;
+      padding: 0 10px;
+      height: 40px;
+      border: 1px dashed red;
+      border-width: 0 0 1px;        
+      .fa-comment-alt {
+        margin-right: 10px;
       }
-      .stock-chart-container {
-        flex: 1;
-        .stock-chart-settings {
-          position: relative;
-          justify-content: center;
-          // align-items: center;
-          display: flex;
-          height: 40px;
-          border: 1px dashed red;
-          border-width: 0 0 1px 1px;
-        }
-        .stock-chart {
-          position: relative;
-          height: 200px;
-          border: 1px dashed red;
-          border-width: 0 0 1px 1px;
-        }
-      }
-      .watch-list {
-        padding: 0 20px;
-        width: 200px;
-        border: 1px dashed red;
-        border-width: 0 1px 1px;
-      }
-    }
-    .estimated-profit {
-      padding: 0 20px;
-      height: 300px;
-      width: 300px;
-      border: 1px dashed red;
-      border-width: 0 0 1px 1px;
-    }
-    .total-nodes {
-      padding: 0 20px;
-      height: 300px;
-      width: 300px;
-      border: 1px dashed red;
-      border-width: 0 0 1px 1px;
-    }
-    .total-hashrate {
-      padding: 0 20px;
-      height: 300px;
-      width: 300px;
-      border: 1px dashed red;
-      border-width: 0 0 1px 1px;
-    }
-    .weather-info {
-      padding: 0 20px;
-      flex: 1;
-      height: 300px;
-      min-width: 300px;
-      border: 1px dashed red;
-      border-width: 0 1px 1px;
     }
   }
-  .mw-footer {
+
+  .ez-charting {
+    display: flex;
+    &__chart {
+      flex: 1;
+      &--position {
+        position: relative;
+        height: 200px;
+        border: 1px dashed red;
+        border-width: 0 0 1px 1px;
+      }
+    }
+    &__settings {
+      position: relative;
+      display: flex;
+      // justify-content: center;
+      height: 40px;
+      border: 1px dashed red;
+      border-width: 0 0 1px;
+      &--position {
+        position: absolute;
+        left: 20px;
+      }
+    }
+  }
+
+  .watch-list {
+    // padding: 0 20px;
+    width: 200px;
+    border: 1px dashed red;
+    border-width: 0 0 1px 1px;
+    &__header {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      height: 40px;
+      border: 1px dashed red;
+      border-width: 0 0 1px;        
+      .fa-list-alt {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .ez-analytics {
+    display: flex;
+    .head-lines {
+      // padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      // width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px;        
+        .fa-newspaper {
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+    .profit {
+      // padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      // width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px;        
+        .fa-dollar-sign {
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+    .workers {
+      // padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      // width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px;        
+        .fa-cubes {
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+    .hash-rate {
+      // padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      // width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px;        
+        .fa-hashtag {
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+    .weather {
+      // padding: 0 20px;
+      flex: 1;
+      height: 300px;
+      // min-width: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px;
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px;        
+        .fa-cloud {
+          margin-right: 10px;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
     text-align: center;
     border: 1px dashed red;
-    border-width: 0 1px;
+    border-width: 0 0 1px;
     .powered-by-link {
       font-size: .8em;
     }

@@ -26,12 +26,13 @@ class ChartSettings extends React.Component {
  
   render() {
     return (
-      <section className="chart-settings">
-        <div>
+      <section className="settings">
+        <i className="fas fa-cog fa-2x" />
+        <i className="fas fa-sync size" />
+        <div className="settings__coin-type">
           {/* <label htmlFor="coin">coin:</label> */}
           <select
             onChange={(e) => { this.setCoin(e); }}
-            className="coin-type"
             id="coin"
             value={this.props.coin}            
           >
@@ -43,7 +44,7 @@ class ChartSettings extends React.Component {
                 >
                   {c}
                 </option>
-              )
+              );
             })}
           </select>
           {/* <label htmlFor="currency">currency:</label> */}
@@ -54,7 +55,14 @@ class ChartSettings extends React.Component {
             value={this.props.currency}
           >
             {this.props.currencies.map((c) => {
-              return <option key={c} value={c}>{c}</option>;
+              return (
+                <option
+                  key={short.uuid()}
+                  value={c}
+                >
+                  {c}
+                </option>
+              );
             })}
           </select>
         </div>

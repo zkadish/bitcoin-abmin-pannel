@@ -4,53 +4,74 @@ import { connect } from 'react-redux';
 import Chart from './Chart';
 import ChartSettings from './ChartSettings';
 
-import FontAweIcon from './FontAweIcon';
-
 function App() {
   return (
-    <div className="mw-container">
-      <header className="mw-header">
-        <h2>MineWiser Dashboard</h2>
+    <div className="ez-miner">
+      <header className="ez-miner__header">
+        <i className="fas fa-cube fa-2x" />
+        <h2 className="ez-miner__header--size">
+          EZ Miner Dashboard
+        </h2>
       </header>
-      <main className="mw-main">
-        <div className="chart-container">
-          <div className="chat-list">
-            <header className="chat-header">
-              <FontAweIcon iconName="faCommentAlt" />
-              Chat
-            </header>
-          </div>
-          <div className="stock-chart-container">
-            <div className="stock-chart-settings">
-              <div style={{ position: 'absolute', left: '20px' }}>
-                chart settings
+      <main className="ez-miner__main">
+        <section className="ez-chat">
+          <header className="ez-chat__header">
+            <i className="far fa-comment-alt fa-2x" />
+            Chat
+          </header>
+        </section>
+        <section className="ez-miner__analytics">
+          <div className="ez-charting">
+            <div className="ez-charting__chart">
+              <div className="ez-charting__settings">
+                <ChartSettings />
               </div>
-              <ChartSettings />
+              <div className="ez-charting__chart--position">
+                <Chart />
+              </div>
             </div>
-            <div className="stock-chart">
-              <Chart />
+            <div className="watch-list">
+              <header className="watch-list__header">
+                <i className="far fa-list-alt fa-2x" />
+                Watch List
+              </header>
             </div>
           </div>
-          <div className="watch-list">
-            watch list
-          </div>
-        </div>
-        <section style={{ display: 'flex' }}>
-          <div className="estimated-profit">
-            profits
-          </div>
-          <div className="total-nodes">
-            active nodes
-          </div>
-          <div className="total-hashrate">
-            total hashrate
-          </div>
-          <div className="weather-info">
-            weather
+          <div className="ez-analytics">
+            <div className="head-lines">
+              <header className="head-lines__header">
+                <i className="fas fa-newspaper fa-2x" />
+                Head Lines
+              </header>
+            </div>
+            <div className="profit">
+              <header className="profit__header">
+                <i className="fas fa-dollar-sign fa-2x" />
+                Profits
+              </header>
+            </div>
+            <div className="workers">
+              <header className="workers__header">
+                <i className="fas fa-cubes fa-2x" />
+                Workers
+              </header>
+            </div>
+            <div className="hash-rate">
+              <header className="hash-rate__header">
+                <i className="fas fa-hashtag fa-2x" />
+                Hash Rate
+              </header>
+            </div>
+            <div className="weather">
+              <header className="weather__header">
+                <i className="fas fa-cloud fa-2x" />
+                Weather
+              </header>
+            </div>
           </div>
         </section>
       </main>
-      <footer className="mw-footer">
+      <footer className="ez-miner__footer">
         <a
           className="powered-by-link"
           href="https://www.cryptocompare.com/"
