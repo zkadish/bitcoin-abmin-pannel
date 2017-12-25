@@ -995,85 +995,166 @@ textarea {
 .canvas-container,.canvas-container .resize-container{position:absolute;top:0;right:0;bottom:0;left:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.canvas-container .resize-container .stockchart-container{position:absolute;top:0;right:85px;bottom:30px;left:0}.canvas-container .resize-container .chart-canvas{position:absolute;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.canvas-container .resize-container .yaxis-container{position:absolute;top:0;right:0;bottom:30px;width:85px}.canvas-container .resize-container .yaxis-canvas{position:absolute;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.canvas-container .resize-container .xaxis-container{position:absolute;left:0;bottom:0;right:85px;height:30px}.canvas-container .resize-container .xaxis-canvas{position:absolute;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}* {
   box-sizing: border-box; }
 
-.mw-container {
-  padding: 0 20px;
-  border: 1px dashed red; }
-  .mw-container .mw-header {
+.ez-miner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px dashed red;
+  border-width: 1px 1px 0; }
+  .ez-miner__header {
+    display: flex;
     padding: 10px 20px;
     border: 1px dashed red;
-    border-width: 0 1px 1px; }
-    .mw-container .mw-header h2 {
+    border-width: 0 0 1px; }
+    .ez-miner__header--size {
       margin: 0; }
-  .mw-container .mw-main .chart-container {
+  .ez-miner__main {
     display: flex; }
-    .mw-container .mw-main .chart-container .chat-list {
-      width: 200px;
+  .ez-miner__analytics {
+    flex: 1; }
+  .ez-miner .ez-chat {
+    width: 200px;
+    border: 1px dashed red;
+    border-width: 0 0 1px; }
+    .ez-miner .ez-chat__header {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      height: 40px;
       border: 1px dashed red;
-      border-width: 0 1px 1px; }
-      .mw-container .mw-main .chart-container .chat-list .chat-header {
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-        height: 40px;
-        border: 1px dashed red;
-        border-width: 0 0 1px; }
-        .mw-container .mw-main .chart-container .chat-list .chat-header .fa-comment-alt {
-          margin-right: 5px; }
-    .mw-container .mw-main .chart-container .stock-chart-container {
+      border-width: 0 0 1px; }
+      .ez-miner .ez-chat__header .fa-comment-alt {
+        margin-right: 10px; }
+  .ez-miner .ez-charting {
+    display: flex; }
+    .ez-miner .ez-charting__chart {
       flex: 1; }
-      .mw-container .mw-main .chart-container .stock-chart-container .stock-chart-settings {
-        position: relative;
-        justify-content: center;
-        display: flex;
-        height: 40px;
-        border: 1px dashed red;
-        border-width: 0 0 1px 1px; }
-      .mw-container .mw-main .chart-container .stock-chart-container .stock-chart {
+      .ez-miner .ez-charting__chart--position {
         position: relative;
         height: 200px;
         border: 1px dashed red;
         border-width: 0 0 1px 1px; }
-    .mw-container .mw-main .chart-container .watch-list {
-      padding: 0 20px;
-      width: 200px;
+    .ez-miner .ez-charting__settings {
+      position: relative;
+      display: flex;
+      height: 40px;
       border: 1px dashed red;
-      border-width: 0 1px 1px; }
-  .mw-container .mw-main .estimated-profit {
-    padding: 0 20px;
-    height: 300px;
-    width: 300px;
+      border-width: 0 0 1px; }
+      .ez-miner .ez-charting__settings--position {
+        position: absolute;
+        left: 20px; }
+  .ez-miner .watch-list {
+    width: 200px;
     border: 1px dashed red;
     border-width: 0 0 1px 1px; }
-  .mw-container .mw-main .total-nodes {
-    padding: 0 20px;
-    height: 300px;
-    width: 300px;
-    border: 1px dashed red;
-    border-width: 0 0 1px 1px; }
-  .mw-container .mw-main .total-hashrate {
-    padding: 0 20px;
-    height: 300px;
-    width: 300px;
-    border: 1px dashed red;
-    border-width: 0 0 1px 1px; }
-  .mw-container .mw-main .weather-info {
-    padding: 0 20px;
-    flex: 1;
-    height: 300px;
-    min-width: 300px;
-    border: 1px dashed red;
-    border-width: 0 1px 1px; }
-  .mw-container .mw-footer {
+    .ez-miner .watch-list__header {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      height: 40px;
+      border: 1px dashed red;
+      border-width: 0 0 1px; }
+      .ez-miner .watch-list__header .fa-list-alt {
+        margin-right: 10px; }
+  .ez-miner .ez-analytics {
+    display: flex; }
+    .ez-miner .ez-analytics .head-lines {
+      flex: 1;
+      height: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px; }
+      .ez-miner .ez-analytics .head-lines__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px; }
+        .ez-miner .ez-analytics .head-lines__header .fa-newspaper {
+          margin-right: 10px;
+          font-size: 1.5em; }
+    .ez-miner .ez-analytics .profit {
+      flex: 1;
+      height: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px; }
+      .ez-miner .ez-analytics .profit__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px; }
+        .ez-miner .ez-analytics .profit__header .fa-dollar-sign {
+          margin-right: 10px;
+          font-size: 1.5em; }
+    .ez-miner .ez-analytics .workers {
+      flex: 1;
+      height: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px; }
+      .ez-miner .ez-analytics .workers__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px; }
+        .ez-miner .ez-analytics .workers__header .fa-cubes {
+          margin-right: 10px;
+          font-size: 1.5em; }
+    .ez-miner .ez-analytics .hash-rate {
+      flex: 1;
+      height: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px; }
+      .ez-miner .ez-analytics .hash-rate__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px; }
+        .ez-miner .ez-analytics .hash-rate__header .fa-hashtag {
+          margin-right: 10px;
+          font-size: 1.5em; }
+    .ez-miner .ez-analytics .weather {
+      flex: 1;
+      height: 300px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 1px; }
+      .ez-miner .ez-analytics .weather__header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border: 1px dashed red;
+        border-width: 0 0 1px; }
+        .ez-miner .ez-analytics .weather__header .fa-cloud {
+          margin-right: 10px;
+          font-size: 1.5em; }
+  .ez-miner__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
     text-align: center;
     border: 1px dashed red;
-    border-width: 0 1px; }
-    .mw-container .mw-footer .powered-by-link {
+    border-width: 0 0 1px; }
+    .ez-miner__footer .powered-by-link {
       font-size: .8em; }
 
-.chart-settings {
+.settings {
   display: flex;
-  justify-content: center;
-  padding: 0 20px;
   align-items: center;
+  padding: 0 10px;
   border: 1px dashed red;
   border-width: 0 1px; }
+  .settings .size {
+    font-size: 1.7em; }
+  .settings .fa-cog {
+    margin-right: 10px; }
+  .settings__coin-type {
+    padding: 0 0 0 10px; }
