@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
+const mode = process.env.NODE_ENV;
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 const GLOBALS = {
@@ -10,39 +12,32 @@ const GLOBALS = {
 
 console.log(GLOBALS.__DEV__);
 
-const extractSass = new ExtractTextWebpackPlugin({
-  // filename: '[name].[contenthash].css',
-  filename: '[name].css',
-  disable: process.env.NODE_ENV === 'development',
-});
 
 module.exports = {
+  mode,
   entry: {
     'mine-wiser': './src/index.js',
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
     filename: '[name].js',
+    publicPath: '/',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'react-hot-loader!babel-loader',
+        loader: 'babel-loader',
       },
       {
-        test: /\.scss|.css?$/,
-        loader: extractSass.extract({
-          use: [{
-            loader: 'css-loader',
-          }, {
-            loader: 'sass-loader',
-          }],
-          fallback: 'style-loader',
-        }),
-      },
+        test: /\.(scss|css)$/,
+        use: [
+          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+    },
     ],
   },
   resolve: {
@@ -51,12 +46,13 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin(GLOBALS),
-    new HtmlWebpackPlugin({
-      title: 'The Minimal React Webpack Babel Setup!',
-      template: 'src/index.html',
-      inject: true,
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
     }),
-    extractSass,
+    new HtmlWebpackPlugin({
+      title: 'Crypto Coin Admin Panel',
+      template: 'src/index.html',
+    }),
   ],
   devtool: 'cheap-source-map',
   devServer: {
