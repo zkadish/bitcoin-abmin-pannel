@@ -1,0 +1,12 @@
+.ez-header {
+  display: flex;
+  align-items: center;
+  border: 1px dashed red;
+  border-width: 0 0 1px;
+  height: 50px;
+  padding: 0 10px;
+  &__title {
+    flex: 1;
+    margin: 0;
+  }
+}

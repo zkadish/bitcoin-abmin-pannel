@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Chart from 'js/stock-chart';
+import Chart from '../js/stock-chart';
 
-import * as action from 'redux/actions/chart';
+import * as action from '../redux/actions/chart';
 
 class StockChart extends React.Component {
   constructor(props) {
     super(props);
-
     this.chart = null;
   }
 
@@ -16,15 +15,16 @@ class StockChart extends React.Component {
     this.chart = new Chart();
     this.chart.init();
     this.chart.coins().then((coins) => {
-      console.log('coin list:', coins);
       const coinList = coins.map(c => c.Symbol);
       this.props.setCoinsList(coinList);
     });
-    this.props.setChartOptons(this.chart.options);
+    this.props.setChartOptions(this.chart.options);
   }
 
   componentWillReceiveProps(nextProps) {
+    // if options is an empty obj?
     if (Object.getOwnPropertyNames(this.props.options).length === 0) return;
+    // update if options change
     if (JSON.stringify(nextProps.options) !== JSON.stringify(this.props.options)) {
       this.chart.onStop();
       this.chart.update(nextProps.options);
@@ -55,9 +55,9 @@ StockChart.propTypes = {
     PropTypes.string,
     PropTypes.object,
     PropTypes.array,
-  ]),
-  setChartOptons: PropTypes.func,
-  setCoinsList: PropTypes.func,
+  ]).isRequired,
+  setChartOptions: PropTypes.func.isRequired,
+  setCoinsList: PropTypes.func.isRequired,
 };
 
 export default connect(
@@ -65,7 +65,7 @@ export default connect(
     options: state.chartSettings.options,
   }),
   dispatch => ({
-    setChartOptons: (options) => { dispatch(action.setChartOptions(options)); },
+    setChartOptions: (options) => { dispatch(action.setChartOptions(options)); },
     setCoinsList: (list) => { dispatch(action.setCoinList(list)); },
   }),
 )(StockChart);

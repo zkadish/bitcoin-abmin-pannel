@@ -1,0 +1,16 @@
+.ez-chat {
+  width: 220px;
+  border: 1px dashed red;
+  border-width: 0 1px 1px 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 40px;
+    border: 1px dashed red;
+    border-width: 0 0 1px;        
+    .fa-comment-alt {
+      margin-right: 10px;
+    }
+  }
+}

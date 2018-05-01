@@ -1,0 +1,21 @@
+@import '../../sass/styles/variables';
+
+.widget {
+  flex: none;
+  height: 300px;
+  width: 25%;
+  border: 1px $DEV_BORDER_RED;
+  border-width: 0 1px 1px 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 40px;
+    border: 1px $DEV_BORDER_RED;
+    border-width: 0 0 1px;
+  }
+}
+
+.widget:nth-child(4n) {
+  border-width: 0 0 1px 0;
+}

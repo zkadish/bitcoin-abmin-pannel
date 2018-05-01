@@ -1,0 +1,23 @@
+.ez-charting {
+  display: flex;
+  &__chart {
+    flex: 1;
+    &--position {
+      position: relative;
+      height: 200px;
+      border: 1px dashed red;
+      border-width: 0 0 1px 0;
+    }
+  }
+  &__settings {
+    position: relative;
+    display: flex;
+    height: 40px;
+    border: 1px dashed red;
+    border-width: 0 0 1px;
+    &--position {
+      position: absolute;
+      left: 20px;
+    }
+  }
+}

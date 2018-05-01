@@ -2,9 +2,8 @@ import React from 'react';
 import { func, string, arrayOf } from 'prop-types';
 import { connect } from 'react-redux';
 
-import short from 'short-uuid';
-
 import FontAweIcon from './FontAweIcon';
+import Select from './inputs/Select';
 import * as action from '../redux/actions/chart';
 
 const ChartSettings = ({
@@ -34,35 +33,18 @@ const ChartSettings = ({
         size="size"
       />
       <div className="settings__coin-type">
-        <select
-          onChange={e => setCoin(e)}
+        <Select
           id="coin"
           value={coin}
-        >
-          {coins.map(c => (
-            <option
-              key={short.uuid()}
-              value={c}
-            >
-              {c}
-            </option>
-          ))}
-        </select>
-        <select
-          onChange={e => setCurrency(e)}
-          className="currency-type"
+          onChange={setCoin}
+          options={coins}
+        />
+        <Select
           id="currency"
           value={currency}
-        >
-          {currencies.map(c => (
-            <option
-              key={short.uuid()}
-              value={c}
-            >
-              {c}
-            </option>
-          ))}
-        </select>
+          onChange={setCurrency}
+          options={currencies}
+        />
       </div>
     </section>
   );

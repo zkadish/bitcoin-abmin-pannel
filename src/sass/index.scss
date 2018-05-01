@@ -1,6 +1,6 @@
-@import 'vars';
+@import './styles/variables';
 
-@import '../css/normalize.css';
+@import '~normalize-css/normalize.css';
 @import '../css/simplegrid.css';
 @import '../css/main.css';
 
