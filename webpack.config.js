@@ -2,16 +2,16 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const resolve = require('./webpack.config.resolve');
 
 const mode = process.env.NODE_ENV;
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 const GLOBALS = {
-  __DEV__: JSON.stringify(process.env.NODE_ENV === 'development'),
+  DEVELOPMENT: JSON.stringify(process.env.NODE_ENV === 'development'),
 };
 
-console.log(GLOBALS.__DEV__);
-
+// console.log(GLOBALS.__DEV__);
 
 module.exports = {
   mode,
@@ -37,13 +37,10 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-    },
+      },
     ],
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx'],
-    modules: ['node_modules', 'src'],
-  },
+  resolve,
   plugins: [
     new webpack.DefinePlugin(GLOBALS),
     new MiniCssExtractPlugin({

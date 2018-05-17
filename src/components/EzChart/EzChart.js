@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Chart from '../Chart';
-import ChartSettings from '../ChartSettings';
+import ChartSettings from './ChartSettings';
 // import WatchList from '../WatchList';
 
 import './ez-chart.scss';

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Chart from '../js/stock-chart';
+import Chart from 'src/js/stock-chart';
 
-import * as action from '../redux/actions/chart';
+import * as action from 'src/redux/actions/chart';
 
 class StockChart extends React.Component {
   constructor(props) {
