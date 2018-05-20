@@ -1,4 +1,4 @@
-# react-webpack-babel boilerplate
+### Bit-Coin Dashboard
 
 
 - react

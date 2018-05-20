@@ -5,4 +5,3 @@ export const NOTES = 'Notes';
 export const PROFIT = 'Profit';
 export const WEATHER = 'Weather';
 export const WORKERS = 'Workers';
-

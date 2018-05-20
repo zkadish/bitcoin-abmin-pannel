@@ -1,0 +1,13 @@
+.footer {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  &__powered-by {
+    font-size: .8em;
+  }
+}

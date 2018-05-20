@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Chart from '../Chart';
+import Chart from './Chart';
 import ChartSettings from './ChartSettings';
-// import WatchList from '../WatchList';
 
 import './ez-chart.scss';
 
@@ -16,7 +15,6 @@ const EzChart = () => (
         <Chart />
       </div>
     </div>
-    {/* <WatchList /> */}
   </div>
 );
 

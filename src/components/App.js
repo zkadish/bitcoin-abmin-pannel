@@ -12,6 +12,7 @@ import HashRate from './widgets/HashRate';
 import Weather from './widgets/Weather';
 import Notes from './widgets/Notes';
 import Alerts from './widgets/Alerts';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -33,16 +34,7 @@ function App() {
         </section>
         <WatchList />
       </main>
-      <footer className="ez-miner__footer">
-        <a
-          className="powered-by-link"
-          href="https://www.cryptocompare.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          powered by cryptocompare
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
